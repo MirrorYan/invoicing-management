@@ -1,0 +1,42 @@
+/* 登录页-样式 */
+.login-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 16px;
+  overflow: hidden;
+  position: relative;
+}
+.login-page > image {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10px;
+  z-index: -1;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 340px;
+  margin-top: 20%
+}
+
+[class^="icon-"] {
+  display: inline-block;
+  padding-right: 16px;
+  font-size: 20px;
+  color: #bbb;
+}
+
+.login-form .van-cell {
+  margin-top: 12px;
+}
+
+.van-button {
+  margin-top: 48px;
+  width: calc(100% - 32px);
+  margin-left: 16px;
+}

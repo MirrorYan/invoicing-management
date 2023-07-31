@@ -1,0 +1,24 @@
+@import "/assets/iconfont/iconfont.wxss";
+
+page {
+  --button-primary-background-color: #45a3ff;
+  --button-primary-border-color: #45a3ff;
+}
+
+view,
+text {
+  box-sizing: border-box;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  line-height: 1;
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.van-cell-group::after {
+  border: none;
+}

@@ -1,0 +1,20 @@
+<!--登录-->
+<view class="login-page">
+  <image src="/assets/images/login_bg.svg" alt="登录" />
+  <view class="login-form">
+    <van-field
+      model:value="{{ username }}"
+      placeholder="用户名"
+    >
+      <text slot="left-icon" class="icon-user" />
+    </van-field>
+    <van-field
+      model:value="{{ password }}"
+      placeholder="密码"
+      type="password"
+    >
+      <text slot="left-icon" class="icon-lock" />
+    </van-field>
+    <van-button type="primary" bind:click="login" round>登录</van-button>
+  </view>
+</view>

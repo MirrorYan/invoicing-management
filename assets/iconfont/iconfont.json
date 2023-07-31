@@ -1,0 +1,23 @@
+{
+  "id": "4188967",
+  "name": "invocing",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "进销存",
+  "glyphs": [
+    {
+      "icon_id": "1555782",
+      "name": "lock",
+      "font_class": "lock",
+      "unicode": "e69b",
+      "unicode_decimal": 59035
+    },
+    {
+      "icon_id": "5504487",
+      "name": "user",
+      "font_class": "user",
+      "unicode": "e691",
+      "unicode_decimal": 59025
+    }
+  ]
+}
