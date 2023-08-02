@@ -12,11 +12,11 @@
     "pages/login/login"
   ],
   "window": {
-    "backgroundColor": "#fffef6",
+    "backgroundColor": "#f9fafc",
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#9ae0ff",
+    "navigationBarBackgroundColor": "#f9fafc",
     "navigationBarTitleText": "商品管理中心",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "selectedColor": "#87daff",

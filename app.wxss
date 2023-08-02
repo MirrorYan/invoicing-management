@@ -1,8 +1,10 @@
 @import "/assets/iconfont/iconfont.wxss";
 
 page {
-  --button-primary-background-color: #45a3ff;
-  --button-primary-border-color: #45a3ff;
+  --button-primary-background-color: #6C8FF8;
+  --button-primary-border-color: #6C8FF8;
+
+  background: #f9fafc;
 }
 
 view,

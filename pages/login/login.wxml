@@ -6,14 +6,14 @@
       model:value="{{ username }}"
       placeholder="用户名"
     >
-      <text slot="left-icon" class="icon-user" />
+      <text slot="left-icon" class="form-icon icon-user" />
     </van-field>
     <van-field
       model:value="{{ password }}"
       placeholder="密码"
       type="password"
     >
-      <text slot="left-icon" class="icon-lock" />
+      <text slot="left-icon" class="form-icon icon-lock" />
     </van-field>
     <van-button type="primary" bind:click="login" round>登录</van-button>
   </view>
