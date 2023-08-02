@@ -2,6 +2,11 @@ import { loginApi } from '@/apis/user'
 
 let app = getApp()
 
+const Message = {
+  username: '请输入用户名',
+  password: '请输入密码'
+}
+
 Page({
   /* Init data of page */
   data: {
@@ -19,42 +24,45 @@ Page({
       password: e.detail.value
     })
   },
-  // Login
-  login: function (e) {
-    const { username, password } = this.data
-    if (!username || !password) {
-      let remain = '请输入用户名'
-      if (username) {
-        remain = "请输入密码"
-      }
+  // 表单校验
+  validate() {
+    let errorMessage = ''
+    if (!this.data.username) {
+      errorMessage = Message.username
+    } else if (!this.data.password) {
+      errorMessage = Message.password
+    }
+    if (errorMessage) {
       wx.showToast({
-        title: remain,
+        title: errorMessage,
         icon: 'none',
         duration: 1000
       })
-      return
+      return false
     }
+    return true
+  },
+  // Login
+  login: function () {
+    if (!this.validate()) return
+    const { username, password } = this.data
     loginApi({
       mobile: username,
       password
     }).then(res => {
-      console.log("🚀 ~ file: login.js:41 ~ res:", res)
-      // const data = SuccRequest(res)
-      // if (data) {
-      //   const roles = data.roles
-      //   wx.showToast({
-      //     title: '登录成功！',
-      //     duration: 2000,
-      //     complete: function () {
-      //       if (roles.indexOf('ROLE_ADMIN') !== -1) {
-      //         app.globalData.admin = true
-      //       }
-      //       wx.setStorageSync('token', data.token)
-      //       wx.setStorageSync('roles', roles)
-      //       wx.switchTab({ url: '/pages/index/index' })
-      //     }
-      //   })
-      // }
+      const roles = res.roles
+      wx.showToast({
+        title: '登录成功！',
+        duration: 2000,
+        complete: function () {
+          if (roles.indexOf('ROLE_ADMIN') !== -1) {
+            app.globalData.admin = true
+          }
+          wx.setStorageSync('token', res.token)
+          wx.setStorageSync('roles', roles)
+          wx.switchTab({ url: '/pages/index/index' })
+        }
+      })
     })
   },
   /* LifeCycle--监听页面加载 */

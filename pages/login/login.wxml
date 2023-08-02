@@ -5,6 +5,7 @@
     <van-field
       model:value="{{ username }}"
       placeholder="用户名"
+      border="{{ false }}"
     >
       <text slot="left-icon" class="form-icon icon-user" />
     </van-field>
@@ -12,9 +13,10 @@
       model:value="{{ password }}"
       placeholder="密码"
       type="password"
+      border="{{ false }}"
     >
       <text slot="left-icon" class="form-icon icon-lock" />
     </van-field>
-    <van-button type="primary" bind:click="login" round>登录</van-button>
+    <van-button type="primary" size="large" bind:click="login" round>登录</van-button>
   </view>
 </view>

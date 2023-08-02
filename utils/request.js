@@ -3,6 +3,10 @@ const domain = 'https://product.chuncongcong.com'
 // 接口统一前缀
 const urlPrev = '/api'
 
+const CODE = {
+  SUCCESS: 1,
+}
+
 export function request ({ url, method = 'get', data }) {
   const token = wx.getStorageSync('token')
   return new Promise((resolve, reject) => {
@@ -12,7 +16,17 @@ export function request ({ url, method = 'get', data }) {
       data,
       ...( token ? {header: { token }} : {} ),
       success: res => {
-        resolve(res.data)
+        const response = res?.data
+        if (response.code === CODE.SUCCESS) {
+          resolve(response.data)
+        } else {
+          reject(response)
+          wx.showToast({
+            title: response.msg,
+            icon: 'none',
+            duration: 2000
+          })
+        }
       },
       fail: err => {
         reject(err)
