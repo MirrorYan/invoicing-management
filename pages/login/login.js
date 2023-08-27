@@ -60,7 +60,7 @@ Page({
           }
           wx.setStorageSync('token', res.token)
           wx.setStorageSync('roles', roles)
-          wx.switchTab({ url: '/pages/index/index' })
+          wx.switchTab({ url: '/pages/home/index' })
         }
       })
     })

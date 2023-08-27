@@ -1,26 +1,4 @@
 @import "/assets/iconfont/iconfont.wxss";
-
-page {
-  --button-primary-background-color: #6C8FF8;
-  --button-primary-border-color: #6C8FF8;
-
-  background: #f9fafc;
-}
-
-view,
-text {
-  box-sizing: border-box;
-}
-
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
-  line-height: 1;
-  font-family: "iconfont" !important;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.van-cell-group::after {
-  border: none;
-}
+@import "/styles/base.wxss";
+@import "/styles/vant.wxss";
+@import "/styles/common.wxss";

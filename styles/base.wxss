@@ -1,0 +1,36 @@
+page {
+  --button-primary-background-color: #6C8FF8;
+  --button-primary-border-color: #6C8FF8;
+
+  background: #f9fafc;
+}
+
+view,
+text {
+  box-sizing: border-box;
+}
+
+image {
+  height: auto;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  line-height: 1;
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.px-4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.p-4 {
+  padding: 16px;
+}

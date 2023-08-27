@@ -1,0 +1,7 @@
+/* 基础卡片 */
+.cardbox {
+  padding: 18px 16px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}

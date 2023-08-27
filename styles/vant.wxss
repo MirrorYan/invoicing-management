@@ -1,0 +1,3 @@
+.van-cell-group::after {
+  border: none;
+}

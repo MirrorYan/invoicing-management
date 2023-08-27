@@ -1,0 +1,31 @@
+/* pages/index/index.wxss */
+.cardbox {
+  --card-icon-height: 48px;
+
+  display: flex;
+  margin-bottom: 16px;
+  color: #121236;
+}
+.cardbox image {
+  display: block;
+  width: var(--card-icon-height);
+  height: var(--card-icon-height);
+  margin-right: 12px;
+}
+.cardbox .card-title {
+  flex: 1;
+  line-height: var(--card-icon-height);
+}
+.cardbox-data {
+  text-align: right;
+}
+.cardbox-data .count {
+  font-size: 20px;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #FF6338;
+}
+.cardbox-data .desc {
+  font-size: 12px;
+  color: #aaa;
+}

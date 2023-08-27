@@ -3,7 +3,7 @@
     "@/*": "/*"
   },
   "pages": [
-    "pages/index/index",
+    "pages/home/index",
     "pages/purchase/purchase",
     "pages/sale/sale",
     "pages/back/back",
@@ -19,42 +19,33 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "selectedColor": "#87daff",
-    "color": "#666",
+    "selectedColor": "#6C8FF8",
+    "color": "#200E32",
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "/images/home_icon.png",
-        "selectedIconPath": "/images/home_select.png"
+        "pagePath": "pages/home/index",
+        "iconPath": "/assets/images/tabbar-home.png",
+        "selectedIconPath": "/assets/images/tabbar-home_active.png"
       },
       {
         "pagePath": "pages/purchase/purchase",
-        "text": "进货单",
-        "iconPath": "/images/purchase_icon.png",
-        "selectedIconPath": "/images/purchase_select.png"
+        "iconPath": "/assets/images/tabbar-func.png",
+        "selectedIconPath": "/assets/images/tabbar-func_active.png"
       },
       {
         "pagePath": "pages/sale/sale",
-        "text": "售货单",
-        "iconPath": "/images/sale_icon.png",
-        "selectedIconPath": "/images/sale_select.png"
+        "iconPath": "/assets/images/tabbar-form.png",
+        "selectedIconPath": "/assets/images/tabbar-form_active.png"
       },
       {
         "pagePath": "pages/back/back",
-        "text": "退货单",
-        "iconPath": "/images/back_icon.png",
-        "selectedIconPath": "/images/back_select.png"
-      },
-      {
-        "pagePath": "pages/depository/depository",
-        "text": "仓库",
-        "iconPath": "/images/stock_icon.png",
-        "selectedIconPath": "/images/stock_select.png"
-      }
-    ]
+        "iconPath": "/assets/images/tabbar-own.png",
+        "selectedIconPath": "/assets/images/tabbar-own_active.png"
+    }]
   },
   "usingComponents": {
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
     "van-cell": "@vant/weapp/cell/index",
     "van-cell-group": "@vant/weapp/cell-group/index",
     "van-button": "@vant/weapp/button/index",
