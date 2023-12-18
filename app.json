@@ -4,7 +4,7 @@
   },
   "pages": [
     "pages/home/index",
-    "pages/purchase/purchase",
+    "pages/func-module/index",
     "pages/sale/sale",
     "pages/back/back",
     "pages/depository/depository",
@@ -28,7 +28,7 @@
         "selectedIconPath": "/assets/images/tabbar-home_active.png"
       },
       {
-        "pagePath": "pages/purchase/purchase",
+        "pagePath": "pages/func-module/index",
         "iconPath": "/assets/images/tabbar-func.png",
         "selectedIconPath": "/assets/images/tabbar-func_active.png"
       },

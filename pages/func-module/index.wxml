@@ -1,0 +1,11 @@
+<!--pages/purchase/purchase.wxml-->
+<view class="main func-moudle px-4">
+  <view class="cardbox text-center">
+    <image class="card-icon" src="/assets/images/analysis.svg" />
+    <view>售货分析</view>
+  </view>
+  <view class="cardbox text-center">
+    <image class="card-icon" src="/assets/images/analysis.svg" />
+    <view>售货分析</view>
+  </view>
+</view>

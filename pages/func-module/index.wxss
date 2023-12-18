@@ -1,0 +1,19 @@
+.main {
+  display: flex;
+}
+
+.cardbox {
+  width: calc(50% - 8px);
+  margin: 8px 0;
+  color: #616E7C;
+}
+.cardbox:nth-child(odd) {
+  margin-right: 16px;
+}
+.card-icon {
+  --card-icon-size: 64px;
+
+  width: var(--card-icon-size);
+  height: var(--card-icon-size);
+  margin-bottom: 16px;
+}
