@@ -18,23 +18,32 @@ Component({
     calendarVisible: false
   },
   methods: {
-    toggleCalendar(e) {
-      const { visible = false } = e.currentTarget.dataset
+    // 打开日历弹窗
+    onOpen() {
       this.setData({
-        calendarVisible: visible
+        calendarVisible: true
       })
-      if (!visible) {
-        const { startDate, endDate } = this.data
-        let dateRange
-        if (new Date(startDate).getTime() <= new Date(endDate).getTime()) {
-          dateRange = [startDate, endDate]
-        } else {
-          dateRange = [endDate, startDate]
-        }
-        this.setData({
-          dateRange
-        })
+    },
+    // 关闭日历弹窗
+    onClose() {
+      this.setData({
+        calendarVisible: false
+      })
+    },
+    // 确认更新日期
+    onConfirm() {
+      this.onClose()
+      const { startDate, endDate } = this.data
+      let dateRange
+      if (new Date(startDate).getTime() <= new Date(endDate).getTime()) {
+        dateRange = [startDate, endDate]
+      } else {
+        dateRange = [endDate, startDate]
       }
+      this.setData({
+        dateRange
+      })
+      this.triggerEvent('change', { dateRange })
     },
     changeDate({ detail }) {
       const { activeKey } = this.data

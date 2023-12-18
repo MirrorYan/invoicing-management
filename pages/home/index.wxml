@@ -1,11 +1,8 @@
 <!--pages/index/index.wxml-->
 <view class="main home-page px-4">
-  <DateRangePciker />
-  <!-- <view class="icon-calendar" bind:tap="showCalendar">{{ dateRange[0] }} 至 {{ dateRange[1] }}</view> -->
-    <!-- allow-same-day="{{ true }}"
-    show-confirm="{{ false }}"
-    bind:close="closeCalendar"
-    bind:confirm="changeDateRange" -->
+  <DateRangePciker
+    bind:change="changeDateRange"
+  />
   <view class="cardbox" wx:for="{{ info }}" wx:key="key">
     <image src="{{ item.icon }}" />
     <view class="card-title">{{ item.title }}</view>

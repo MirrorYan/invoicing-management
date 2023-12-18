@@ -1,13 +1,13 @@
 <view class="daterange-picker">
   <view
     class="icon-calendar"
-    data-visible="{{ true }}"
-    bind:tap="toggleCalendar"
+    bind:tap="onOpen"
   >{{ dateRange[0] }} 至 {{ dateRange[1] }}</view>
   <van-action-sheet
     show="{{ calendarVisible }}"
     title="选择时间"
     safe-area-inset-bottom="{{ false }}"
+    bind:close="onClose"
   >
     <view class="popup-daterange">
       <text
@@ -33,8 +33,7 @@
     <van-button
       type="primary"
       custom-class="confirm-btn"
-      data-visible="{{ false }}"
-      bind:tap="toggleCalendar"
+      bind:tap="onConfirm"
     >确定</van-button>
   </van-action-sheet>
 </view>

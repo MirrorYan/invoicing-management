@@ -15,7 +15,6 @@ Page({
     maxDate: new Date().getTime(),
     calendarVisible: false,
     dateRange: [today, today],
-    dialogDateRange: [today, today],
     info: {
       sale: {
         icon: '/assets/images/home-sale.png',
@@ -130,44 +129,6 @@ Page({
           }
         })
       })
-    // Request({
-    //   url: pucStatis,
-    //   success: function (res) {
-    //     const data = SuccRequest(res)
-    //     if (data) {
-    //       that.setData({
-    //         purcInfo: data,
-    //         pucLoad: false
-    //       })
-    //     }
-    //   }
-    // })
-    // Request({
-    //   url: stoStatis,
-    //   success: function (res) {
-    //     const data = SuccRequest(res)
-    //     if (data) {
-    //       that.setData({
-    //         stokeInfo: data,
-    //         stoLoad: false
-    //       })
-    //       wx.stopPullDownRefresh()
-    //     }
-    //   }
-    // })
-    // Request({
-    //   url: bacStatis,
-    //   success: function (res) {
-    //     const data = SuccRequest(res)
-    //     if (data) {
-    //       that.setData({
-    //         backInfo: data,
-    //         bacLoad: false
-    //       })
-    //       wx.stopPullDownRefresh()
-    //     }
-    //   }
-    // })
   },
   showCalendar() {
     this.setData({
@@ -181,30 +142,18 @@ Page({
   },
   changeDateRange({ detail }) {
     this.setData({
-      dateRange: [formatDate(detail[0]), formatDate(detail[1])],
-      calendarVisible: false
+      dateRange: detail.dateRange
     })
     this.pageLoad()
   },
-  changeDate(val) {
-    this.setData({
-      dialogDateRange: [formatDate(val.detail), formatDate(val.detail)]
-    })
-  },
-  // /* Event Listeners */
-  // dateFresh: function (e) {
-  //   let { dates } = e.detail
-  //   this.setData({ dates })
-  //   this.pageLoad()
-  // },
   /* LifeCycle-监听页面显示 */
   onShow: function () {
     this.pageLoad()
   },
-  // /* 下拉刷新 */
-  // onPullDownRefresh: function() {
-  //   const { salLoad, pucLoad, stoLoad, bacLoad } = this.data
-  //   if (salLoad || pucLoad || stoLoad || bacLoad) return
-  //   this.pageLoad()
-  // }
+  /* 下拉刷新 */
+  onPullDownRefresh: function() {
+    const { salLoad, pucLoad, stoLoad, bacLoad } = this.data
+    if (salLoad || pucLoad || stoLoad || bacLoad) return
+    this.pageLoad()
+  }
 })
