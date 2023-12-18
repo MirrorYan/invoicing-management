@@ -10,10 +10,6 @@ text {
   box-sizing: border-box;
 }
 
-image {
-  height: auto;
-}
-
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
   line-height: 1;

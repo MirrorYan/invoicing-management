@@ -69,9 +69,7 @@ Page({
   onLoad: function (options) {
     const token = wx.getStorageSync('token') || null
     if (token) {
-      wx.navigateTo({
-        url: '/pages/index/index',
-      })
+      wx.redirectTo({ url: '/pages/index/index' })
     }
   },
 

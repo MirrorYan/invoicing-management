@@ -1,12 +1,13 @@
 import { isObject } from './is'
 
 // 接口域名
-const domain = 'https://product.chuncongcong.com'
+const domain = 'https://product.chuncongcong.top'
 // 接口统一前缀
 const urlPrev = '/api'
 
 const CODE = {
   SUCCESS: 1,
+  NOT_LOGIN: 401,
 }
 
 // 拼接get请求参数
@@ -37,8 +38,12 @@ export function request ({ url, method = 'get', data }) {
       ...( token ? {header: { token }} : {} ),
       success: res => {
         const response = res?.data
-        if (response.code === CODE.SUCCESS) {
+        const { code } = response
+        if (code === CODE.SUCCESS) {
           resolve(response.data)
+        } else if (code === CODE.NOT_LOGIN) {
+          reject(response.msg)
+          wx.redirectTo({ url: '/pages/login/login' })
         } else {
           reject(response)
           wx.showToast({

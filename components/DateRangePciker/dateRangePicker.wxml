@@ -1,0 +1,40 @@
+<view class="daterange-picker">
+  <view
+    class="icon-calendar"
+    data-visible="{{ true }}"
+    bind:tap="toggleCalendar"
+  >{{ dateRange[0] }} 至 {{ dateRange[1] }}</view>
+  <van-action-sheet
+    show="{{ calendarVisible }}"
+    title="选择时间"
+    safe-area-inset-bottom="{{ false }}"
+  >
+    <view class="popup-daterange">
+      <text
+        class="date {{ activeKey === 'startDate' ? 'actived' : '' }}"
+        data-active="startDate"
+        bind:tap="changeDateActive"
+      >{{ startDate }}</text>
+      至
+      <text
+        class="date {{ activeKey === 'endDate' ? 'actived' : '' }}"
+        data-active="endDate"
+        bind:tap="changeDateActive"
+      >{{ endDate }}</text>
+    </view>
+    <van-datetime-picker
+      type="date"
+      value="{{ currentDate }}"
+      max-date="{{ maxDate }}"
+      show-toolbar="{{ false }}"
+      bind:input="changeDate"
+      item-height="38"
+    />
+    <van-button
+      type="primary"
+      custom-class="confirm-btn"
+      data-visible="{{ false }}"
+      bind:tap="toggleCalendar"
+    >确定</van-button>
+  </van-action-sheet>
+</view>

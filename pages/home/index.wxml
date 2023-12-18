@@ -1,13 +1,17 @@
 <!--pages/index/index.wxml-->
-<view class="main home-page">
-  <view class="px-4">
-    <view class="cardbox" wx:for="{{ info }}" wx:key="key">
-      <image src="{{ item.icon }}" />
-      <view class="card-title">{{ item.title }}</view>
-      <view class="cardbox-data">
-        <view class="count">¥{{ item.price || '--' }}</view>
-        <view class="desc">{{ item.label }}: {{ item.number || 0 }}</view>
-      </view>
+<view class="main home-page px-4">
+  <DateRangePciker />
+  <!-- <view class="icon-calendar" bind:tap="showCalendar">{{ dateRange[0] }} 至 {{ dateRange[1] }}</view> -->
+    <!-- allow-same-day="{{ true }}"
+    show-confirm="{{ false }}"
+    bind:close="closeCalendar"
+    bind:confirm="changeDateRange" -->
+  <view class="cardbox" wx:for="{{ info }}" wx:key="key">
+    <image src="{{ item.icon }}" />
+    <view class="card-title">{{ item.title }}</view>
+    <view class="cardbox-data">
+      <view class="count">¥{{ item.price || '--' }}</view>
+      <view class="desc">{{ item.label }}: {{ item.number || 0 }}</view>
     </view>
   </view>
 </view>

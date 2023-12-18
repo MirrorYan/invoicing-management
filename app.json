@@ -49,7 +49,9 @@
     "van-cell": "@vant/weapp/cell/index",
     "van-cell-group": "@vant/weapp/cell-group/index",
     "van-button": "@vant/weapp/button/index",
-    "van-field": "@vant/weapp/field/index"
+    "van-field": "@vant/weapp/field/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+    "van-action-sheet": "@vant/weapp/action-sheet/index"
   },
   "sitemapLocation": "sitemap.json"
 }

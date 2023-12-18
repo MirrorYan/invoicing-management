@@ -6,6 +6,13 @@
   "description": "进销存",
   "glyphs": [
     {
+      "icon_id": "34323115",
+      "name": "日历",
+      "font_class": "calendar",
+      "unicode": "e807",
+      "unicode_decimal": 59399
+    },
+    {
       "icon_id": "1555782",
       "name": "lock",
       "font_class": "lock",

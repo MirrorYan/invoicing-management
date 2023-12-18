@@ -12,7 +12,10 @@ const today = formatDate()
 Page({
   /* Init data of Page */
   data: {
+    maxDate: new Date().getTime(),
+    calendarVisible: false,
     dateRange: [today, today],
+    dialogDateRange: [today, today],
     info: {
       sale: {
         icon: '/assets/images/home-sale.png',
@@ -48,7 +51,7 @@ Page({
       }
     },
   },
-  pageLoad: function () {
+  pageLoad() {
     const _this = this
     const { dateRange } = _this.data
     saleStaticsApi(dateRange)
@@ -165,6 +168,28 @@ Page({
     //     }
     //   }
     // })
+  },
+  showCalendar() {
+    this.setData({
+      calendarVisible: true
+    })
+  },
+  closeCalendar() {
+    this.setData({
+      calendarVisible: false
+    })
+  },
+  changeDateRange({ detail }) {
+    this.setData({
+      dateRange: [formatDate(detail[0]), formatDate(detail[1])],
+      calendarVisible: false
+    })
+    this.pageLoad()
+  },
+  changeDate(val) {
+    this.setData({
+      dialogDateRange: [formatDate(val.detail), formatDate(val.detail)]
+    })
   },
   // /* Event Listeners */
   // dateFresh: function (e) {

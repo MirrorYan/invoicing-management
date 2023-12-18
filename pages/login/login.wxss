@@ -46,7 +46,7 @@
 }
 
 .login-form .van-button {
-  --button-large-height: 60px;
+  --button-large-height: 54px;
 
   width: 100%;
   line-height: var(--button-large-height);
