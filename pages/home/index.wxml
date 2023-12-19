@@ -1,9 +1,15 @@
-<!--pages/index/index.wxml-->
+<!-- 首页 -->
 <view class="main home-page px-4">
   <DateRangePciker
     bind:change="changeDateRange"
   />
-  <view class="cardbox" wx:for="{{ info }}" wx:key="key">
+  <view
+    wx:for="{{ info }}"
+    wx:key="key"
+    class="cardbox"
+    data-url="{{ item.url }}"
+    bind:tap="redirect"
+  >
     <image src="{{ item.icon }}" />
     <view class="card-title">{{ item.title }}</view>
     <view class="cardbox-data">

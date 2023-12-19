@@ -1,4 +1,5 @@
 import { isObject } from './is'
+import { PAGES } from './constants'
 
 // 接口域名
 const domain = 'https://product.chuncongcong.top'
@@ -43,7 +44,7 @@ export function request ({ url, method = 'get', data }) {
           resolve(response.data)
         } else if (code === CODE.NOT_LOGIN) {
           reject(response.msg)
-          wx.redirectTo({ url: '/pages/login/login' })
+          wx.redirectTo({ url: PAGES.LOGIN })
         } else {
           reject(response)
           wx.showToast({

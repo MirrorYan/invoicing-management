@@ -1,0 +1,6 @@
+<!-- 售货页 -->
+<view class="main sale-page px-4">
+  <DateRangePciker
+    bind:change="changeDateRange"
+  />
+</view>

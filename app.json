@@ -5,11 +5,11 @@
   "pages": [
     "pages/home/index",
     "pages/func-module/index",
-    "pages/sale/sale",
+    "pages/sale/index",
     "pages/back/back",
     "pages/depository/depository",
     "pages/modify/index",
-    "pages/login/login"
+    "pages/login/index"
   ],
   "window": {
     "backgroundColor": "#f9fafc",
@@ -33,7 +33,7 @@
         "selectedIconPath": "/assets/images/tabbar-func_active.png"
       },
       {
-        "pagePath": "pages/sale/sale",
+        "pagePath": "pages/depository/depository",
         "iconPath": "/assets/images/tabbar-form.png",
         "selectedIconPath": "/assets/images/tabbar-form_active.png"
       },

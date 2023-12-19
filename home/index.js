@@ -1,4 +1,4 @@
-// pages/sale/sale.js
+// home/index.js
 Page({
 
   /**

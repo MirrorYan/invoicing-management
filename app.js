@@ -1,4 +1,5 @@
-import { getToken, getRoles } from './utils/auth'
+import { getToken, getRoles } from '@/utils/auth'
+import { PAGES } from '@/utils/constants'
 
 App({
   globalData: {
@@ -9,7 +10,7 @@ App({
     // Get user informations.
     if (!getToken() || !roles) {
       wx.redirectTo({
-        url: '/pages/login/login'
+        url: PAGES.LOGIN
       })
     } else {
       if (roles.indexOf('ROLE_ADMIN') !== -1) {

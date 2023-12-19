@@ -6,11 +6,11 @@ import {
 } from '@/apis/home'
 import { formatDate } from '@/utils/date'
 import { handlePrice } from '@/utils/price'
+import { PAGES } from '@/utils/constants'
 
 const today = formatDate()
 
 Page({
-  /* Init data of Page */
   data: {
     maxDate: new Date().getTime(),
     calendarVisible: false,
@@ -18,6 +18,7 @@ Page({
     info: {
       sale: {
         icon: '/assets/images/home-sale.png',
+        url: PAGES.SALE,
         title: '销售',
         label: '销量',
         load: false,
@@ -26,6 +27,7 @@ Page({
       },
       purchase: {
         icon: '/assets/images/home-purchase.png',
+        url: '/',
         title: '进货',
         label: '进货数',
         load: false,
@@ -34,6 +36,7 @@ Page({
       },
       back: {
         icon: '/assets/images/home-back.png',
+        url: '/',
         title: '退货',
         label: '退货数',
         load: false,
@@ -42,6 +45,7 @@ Page({
       },
       stock: {
         icon: '/assets/images/home-stock.png',
+        url: '/',
         title: '库存',
         label: '库存总量',
         load: false,
@@ -145,6 +149,10 @@ Page({
       dateRange: detail.dateRange
     })
     this.pageLoad()
+  },
+  redirect(e) {
+    const { url } = e.currentTarget.dataset
+    url && wx.navigateTo({ url })
   },
   /* LifeCycle-监听页面显示 */
   onShow: function () {

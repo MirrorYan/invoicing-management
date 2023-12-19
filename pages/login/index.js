@@ -1,4 +1,5 @@
 import { loginApi } from '@/apis/user'
+import { PAGES } from '@/utils/constants'
 
 let app = getApp()
 
@@ -60,16 +61,16 @@ Page({
           }
           wx.setStorageSync('token', res.token)
           wx.setStorageSync('roles', roles)
-          wx.switchTab({ url: '/pages/home/index' })
+          wx.switchTab({ url: PAGES.HOME })
         }
       })
     })
   },
   /* LifeCycle--监听页面加载 */
-  onLoad: function (options) {
+  onLoad: () => {
     const token = wx.getStorageSync('token') || null
     if (token) {
-      wx.redirectTo({ url: '/pages/index/index' })
+      wx.redirectTo({ url: PAGES.HOME })
     }
   },
 
